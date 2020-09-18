@@ -1,0 +1,92 @@
+*{
+    font-family: sans-serif;
+    margin: 0px
+}
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin :60px;
+    border: solid;
+    border-color: blueviolet;
+    border-radius: 40px;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: indigo;
+    color: greenyellow;
+    height: 100px;
+    font-size: 30px
+    
+}
+nav a{
+    border: green;
+    border-style: solid;
+    border-radius: 5px;;
+    color: green;
+    background-color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 10px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+nav a:hover{
+    color: greenyellow;
+    background-color: green;
+    transition: 2s;
+    
+
+}
+.center-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    justify-self: center;
+    margin:30px;
+}
+.imagens-rede img{
+
+    height: 200px;
+    width: 200px;
+}
+table img{
+    height: 200px;
+    width: 200px;
+}
+
+th{
+    font-size: 30px;
+    border-bottom: solid;
+    border-right: solid;
+    
+}
+tr td{
+    align-items: center;
+    font-size: 25px;
+    margin:5px;
+  border-bottom: solid;
+  border-right: solid;
+}
+
+table{
+    border-style: solid; 
+      
+}
+footer{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: indigo;
+    color: greenyellow;
+    font-weight: bold;
+    margin-top: calc(63vh - 80px);
+    height: 80px;
+   
+    
+
+}
