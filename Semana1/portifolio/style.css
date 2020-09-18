@@ -1,0 +1,120 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h2{
+    font-family: sans-serif;
+    color: brown;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.nav-link{
+    background:black;
+background: linear-gradient(90deg, rgb(0, 0, 0) 14%, rgba(40,41,40,1) 53%, rgba(255,0,5,1) 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    padding :20px;
+    
+
+}
+.nav-link ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-link li{
+    text-transform: uppercase;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: sans-serif;
+    
+}
+.texto{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: rgb(26, 26, 26);
+    height: 650px;
+    margin: 30px;
+    border-radius: 40px;
+}
+.texto div{
+    padding: 20px;
+    margin: 30px;
+    
+}
+.texto img{
+    margin:60px 20px 10px 20px;
+    width: 400px;
+    height: 250px;
+}
+.texto img:hover{
+    width: 600px;
+    height: 400px;
+}
+.texto h2{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.texto li{
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-link a{
+    text-decoration: none;
+    color:black;
+}
+.nav-link a:hover{
+    transition: 3s;
+    color:white;
+    font-size: 30px;
+}
+.container{
+    display: flex;
+    align-items: stretch;
+    padding: 30px;
+    background-color: black;
+    height: calc(100vh - 90px - 240px);
+
+
+}
+.container p{
+    margin:20px;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: white;
+}
+#perfil-photo{
+    float: left;;
+    height: 650px;
+    width: 450px;
+    margin: 30px;
+    border-radius: 100px;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(26, 26, 26);
+    height: 200px;
+    top:90vh
+}
+footer img{
+   
+    height: 80px;
+    width: 80px;
+}
+footer img:hover{
+
+    height: 100px;
+    width: 100px;
+}
