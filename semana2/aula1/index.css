@@ -99,9 +99,12 @@ td button:active{
     background-color: #2274a5;
     color: white;
 }
-
+.busca img:hover{
+    height: 80px;
+    width: 80px;
+}
 #container-de-descricao>ol {
-    padding: 15px 0px;
+    padding: 30px 0px;
 }
 
 #container-para-comprar {
