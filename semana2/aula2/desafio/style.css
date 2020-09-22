@@ -1,0 +1,130 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.top-nav{
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    border-bottom: 2px gray solid;
+}
+ #dev-button{
+     color: white;
+     background-color: black;
+     border: none;
+     border-radius: 5px;
+     font-weight: bolder;
+     font-size: 15px;
+    grid-column: 2/3;
+ }
+ input:focus{
+     box-shadow:  0 0 0 0;
+     outline: 0;
+ }
+ #search{
+     border-radius: 5px;
+     grid-column: 3/10;
+     border: 1px gray solid;
+
+ }
+ #login_link{
+     margin-top: 10px;
+     text-decoration: none;
+     font-weight: bolder;
+     grid-column: 20/22;
+
+ }
+ #account_button{
+     border-radius: 5px;
+     background-color: blue;
+     color: white;
+     font-weight: bolder;
+     border: none;
+     grid-column: 22/25;
+     opacity: 0px;
+
+ }
+ .container{
+     padding: 10px;
+     background-color: lightgray;
+     display: grid;
+     grid-template-columns: 1fr 2fr 1fr;
+     grid-template-rows: repeat(8, 1fr);
+     row-gap: 10px;
+     column-gap: 10px;
+
+ }
+.menu ul{
+    margin-left: 20px;
+    align-self: flex-start;
+    list-style: none;
+    width: 80%;
+
+}
+.menu li{
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    
+}
+.menu li:hover{
+    background-color: lightgray;
+    border-radius: 5px;
+}
+ .menu{
+     border-radius: 5px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     height: max-content;
+     background-color:white;
+     height: max-content;
+    padding: 10px;
+     grid-row: 1/5;
+
+ }
+.nav{
+    border-radius: 5px;
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+.nav a{
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+    padding: 5px;
+    color: black;
+    border-radius: 5px;
+    
+}
+#first{
+    display: flex;
+    font-size: larger;
+    justify-self: start;;
+    
+}
+.nav a:hover{
+    background-color: rgba(171, 118, 221, 0.849);
+    color: blueviolet;
+    border-bottom: 2px blueviolet solid;
+    border-left: 2px blueviolet solid;
+
+}
+ .post{
+    background-color: red;
+    grid-column: 2/3;
+    grid-row: 2/5;
+ }
+ .anuncios{
+    background-color: blue;
+    height: 60px;
+ }
