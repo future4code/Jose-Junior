@@ -1,0 +1,130 @@
+#pond {
+    display: flex;
+  justify-content: flex-end;
+  }
+
+  #pond {
+    display: flex;
+  justify-content: center
+  }
+
+  #pond {
+    display: flex;
+  justify-content: space-around
+  }
+  #pond {
+    display: flex;
+  justify-content:space-between
+  }
+
+  #pond {
+    display: flex;
+  align-items: flex-end
+  }
+  #pond {
+    display: flex;
+  align-items: center;
+  justify-content: center
+  }
+  #pond {
+    display: flex;
+  justify-content: space-around;
+  align-items: flex-end
+  }
+  #pond {
+    display: flex;
+  flex-direction: row-reverse
+  }
+  #pond {
+    display: flex;
+  flex-direction: column
+  }
+  #pond {
+    display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse
+  }
+  #pond {
+    display: flex;
+  flex-direction: column;
+  justify-content: flex-end
+  }
+  #pond {
+    display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse
+  }
+  #pond {
+    display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row-reverse
+  }
+  
+#pond {
+  display: flex;
+}
+
+.yellow {
+order:2
+}
+#pond {
+    display: flex;
+  }
+  
+  .red {
+  order:-1
+  }
+  #pond {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .yellow {
+  align-self: flex-end
+  }
+  #pond {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .yellow {
+  order:1;
+  align-self: flex-end
+  }
+  #pond {
+    display: flex;
+  flex-wrap: wrap
+  }
+  #pond {
+    display: flex;
+  flex-wrap: wrap;
+  flex-direction: column
+  }
+  #pond {
+    display: flex;
+  flex-flow: column wrap
+  }
+  #pond {
+    display: flex;
+    flex-wrap: wrap;
+  align-content: flex-start
+  }
+  #pond {
+    display: flex;
+    flex-wrap: wrap;
+  align-content: flex-end
+  }
+  #pond {
+    display: flex;
+    flex-wrap: wrap;
+  align-content:center;
+  flex-direction: column-reverse
+  }
+  #pond {
+    display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  flex-flow: column-reverse wrap-reverse;
+  justify-content: center
+  }
