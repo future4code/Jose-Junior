@@ -1,7 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .top-nav{
@@ -28,6 +28,7 @@
      outline: 0;
  }
  #search{
+     padding: 10px;
      border-radius: 5px;
      grid-column: 3/10;
      border: 1px gray solid;
@@ -74,8 +75,10 @@
     
 }
 .menu li:hover{
+    cursor: pointer;
     background-color: lightgray;
     border-radius: 5px;
+    color: cornflowerblue;
 }
  .menu{
      border-radius: 5px;
@@ -91,7 +94,8 @@
  }
 .nav{
     border-radius: 5px;
-    
+    height: max-content;
+   
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -99,12 +103,18 @@
 }
 .nav a{
     text-decoration: none;
-    font-weight: bold;
     margin: 10px;
     padding: 5px;
     color: black;
     border-radius: 5px;
     
+}
+button:hover{
+    cursor: pointer;
+}
+button:focus{
+    box-shadow:  0 0 0 0;
+    outline: 0;
 }
 #first{
     display: flex;
@@ -114,17 +124,27 @@
 }
 .nav a:hover{
     background-color: rgba(171, 118, 221, 0.849);
+    font-weight: bold;
     color: blueviolet;
     border-bottom: 2px blueviolet solid;
     border-left: 2px blueviolet solid;
 
 }
  .post{
-    background-color: red;
+     border-radius: 5px;
+    background-color: white;
     grid-column: 2/3;
     grid-row: 2/5;
+ }
+ .post p, h2{
+     margin: 10px;
  }
  .anuncios{
     background-color: blue;
     height: 60px;
+ }
+ img {
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     width: 700px;
  }
