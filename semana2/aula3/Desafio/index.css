@@ -1,0 +1,155 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+body > div {
+    border: 1px solid black;
+}
+
+#first-block {
+    background-color: red;
+    height: 20vh;
+}
+#main-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 10px;  
+   
+    
+}
+#main-container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    height: 20vh;
+}
+
+.top-div{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.second-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.black-conteiners{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.last-div{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.blue-block {
+    background-color: blue; 
+    flex-grow: 1;
+    margin: 5px;
+    
+}
+
+.yellow-block {
+    background-color: yellow;
+    flex-grow: 1;
+    margin: 5px;
+}
+
+.green-block {
+    background-color: green;
+    flex-grow: 1;
+    margin: 5px;
+    
+
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    margin: 5px;
+    flex-grow: 1;
+}
+
+.white-block {
+    border: 1px black solid;
+    background-color: white;
+    margin: 5px;
+    flex-grow: 1;
+}
+@media screen and (max-width: 680px){
+    .top-div{
+        display: flex;
+        justify-content:space-between;
+        flex-flow:  row wrap;  
+        flex-basis: 100%;
+       
+    }
+    
+    .second-div{
+        display: flex;
+        justify-content: space-between;
+        flex-flow: wrap;
+        flex-basis: 100%;
+    }
+    .blue-block {
+        background-color: blue; 
+        flex-grow: 1;
+        margin: 5px; 
+    }
+    
+    .yellow-block {
+        background-color: yellow;
+        flex-grow: 1;
+        margin: 5px;
+        
+    }
+    
+    .green-block {
+        background-color: green;
+        flex-grow: 2;
+        width: 90vw;
+        margin: 5px;
+    
+    }
+    .last-div{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+    
+    }
+    #last-white{
+        flex-grow: 2;
+        width: 90vw;
+    }
+  
+    .white-block {
+        border: 1px black solid;
+        background-color: white;
+        margin: 5px;
+        flex-grow: 1;
+    }
+
+}
+
+@media screen and (max-width: 380px){
+    #main-container div{
+        width: 90vw;
+    }
+    .black-conteiners{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+    }
+}
