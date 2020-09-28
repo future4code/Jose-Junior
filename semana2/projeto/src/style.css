@@ -1,0 +1,265 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+/*  inicio do menu de navegacao principal desktop, 
+    fixado no topo e com links para a sessoes da page */
+nav{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    background-color: #1b2338;
+    border-bottom:1px  #60bbbe solid;
+    
+}
+nav img{
+    height: 100%;
+    margin-left: 10px;
+}
+
+.links ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+li{
+    margin: 20px;
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #60bbbe;
+}
+/* Fim da configuracoes do menu de navegacao desktop */
+
+/* sessao sobre nos configuracao 
+    basica com imagem de background */
+
+.about{
+    padding-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10vw;
+    background-image: url(./img/dividir-apartamentos-com-amigos.png) ;
+    height: 90vh;
+    background-size: cover
+}
+
+
+.about section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    border-radius: 5px;
+    width: 40%;
+    background-color: rgba(250, 235, 215, 0.719);
+    height: 90%;
+}
+
+/* sessao de porque a f4 life, contendo tres sections
+    com imagens e h2 como descricao. */
+.why{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #101935;
+    height: max-content;
+    border-top: 1px #f2fdff solid;
+    flex-flow: row wrap;
+    flex-basis: 100%;
+    padding: 100px;
+
+}
+
+.why section{
+    background-color: #f2fdff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px ;
+    width: 300px ;
+    border-radius: 5px; 
+    margin: 20px; 
+    
+}
+
+
+.why h2{
+    flex-grow: 1;
+    margin: 20px;
+    color: #101935 ;
+}
+h1{
+    font-weight: bolder;
+    color: #60bbbe;
+    display: none;
+
+}
+.why-img img{
+    
+    height: 50%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.how article{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: #60bbbe;
+    height: max-content;
+    padding: 100px;
+    border-bottom: 1px #f2fdff solid;
+    border-top: 1px #f2fdff solid;
+}
+.how section{
+    width: 60vh;
+    padding: 10px;
+    background-color: #f2fdffa8;
+    border-radius: 5px;
+    height: max-content;
+    margin: 20px;
+}
+
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #101935;
+    height: 30vh;
+    border-bottom: 1px #f2fdff solid;
+    border-top: 1px #f2fdff solid;
+}
+
+.social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #60bbbe;
+    height: 100px;
+    padding: 10px;
+    border-radius: 250px;
+
+}
+.social-media img{
+    height: 100px;
+    border-radius: 250px;
+}
+footer{
+    bottom: 0;
+}
+/* responsividade de aumento de
+     font para quando o mouse passar na opcao. */
+a:hover{
+    font-size: larger;
+    font-weight: bolder;
+    transition: 1s;
+}
+/*  responsividade para telas com ate 580 pixels */
+@media screen and (max-width: 580px){
+
+    /* menu de navegacao agora na vertical
+         ocupando 100% da tela */
+         nav{
+            position: unset;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            height:100vh;
+            background-color: #1b2338;
+            border-bottom:1px  #60bbbe solid;
+            
+        }
+       
+        nav img{
+            width: 100%;
+            height: 10%;
+            margin-left: 10px;
+        }
+    
+        .links{
+            flex-grow: 1;
+            margin-top: 50px;
+        }
+        .links ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+    
+        }
+    
+        .links li{
+            margin: 50px;
+        }
+        
+        .about{
+            padding-top: 10vh;
+            padding-right: 10vw;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding-right: 10vw;
+            padding-left: 10vw;
+            background-image: url(./img/dividir-apartamentos-com-amigos.png) ;
+            height: 90vh;
+           
+            background-size: cover
+        }
+        
+    
+        .about section{
+            display: flex;
+           
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            border-radius: 5px;
+            width: 40%;
+            background-color: rgba(250, 235, 215, 0.719);
+            height: max-content;
+            width: 80vw;
+            margin: 30px
+        }
+        
+        
+        .how article{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            background-color: #60bbbe;
+            height: max-content;
+            
+            border-bottom: 1px #f2fdff solid;
+            border-top: 1px #f2fdff solid;
+        }
+        .how section{
+            padding: 10px;
+            background-color: #f2fdffa8;
+            border-radius: 5px;
+            height: max-content;
+            margin: 20px;
+            width: 80vw;
+        }
+        h1{
+            display: block;
+        }   
+}
