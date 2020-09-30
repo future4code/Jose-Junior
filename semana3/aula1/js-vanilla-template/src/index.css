@@ -1,0 +1,29 @@
+// a)
+let name;
+
+// b)
+let age;
+
+// c)
+console.log(typeof(name, age))
+
+// d)
+/*
+ o tipo impresso no console foi de  'undefined', acredito que como nao adicionamos
+ nenhum valor na variavel criada o javascript nao tem como definir o seu tipo.
+ */
+
+// e)
+ name = prompt('What is your name? ')
+ age = prompt('how old are you? ')
+
+ // f)
+ /*  
+  o tipo de ambas as variaveis foi dada como string, acredito que por padrao o javascript
+  classifica as variaveis recebidas pelo prompt como strings mesmo sendo um numero
+  como precaucao caso o usuario coloque um valor alphanumerico.
+ */
+
+// g)
+
+console.log(`Ola ${name}, voce tem ${age} anos!`)
