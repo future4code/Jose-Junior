@@ -108,21 +108,36 @@ if(initial === true){
    }
   
 
-
-   if(pcSum > playerSum && pcSum <= 21){
-
-      alert(`Computer won!\ncards: ${pcCards} total: ${pcSum}\n yours card: ${playerCards},   total: ${playerSum}`)
-      console.log('Computer won!')
-
-   }else if(playerSum > pcSum && playerSum <= 21){
-
-      alert(`You won:\nyours card: ${playerCards},  total: ${playerSum}\n Computer cards ${pcCards}, total: ${pcSum}`)
-      console.log('You won!')
-   }else if(playerSum > 21 && pcSum > 21){
+   if(playerSum > 21 && pcSum > 21){
       
       alert(`no winner.\nyours card: ${playerCards}, total: ${playerSum}\n Computer cards ${pcCards}, total: ${pcSum}`)
+   
+   }else if(pcSum > playerSum){
+      
+      if(pcSum > 21 && playerSum <= 21){
 
+         alert(`You won:\nyours card: ${playerCards},  total: ${playerSum}\n Computer cards ${pcCards}, total: ${pcSum}`)
+         console.log('You won!')
 
+      }else
+
+         alert(`Computer won!\ncards: ${pcCards} total: ${pcSum}\n yours card: ${playerCards},   total: ${playerSum}`)
+         console.log('Computer won!')
+
+      }else if(playerSum > pcSum){
+
+      if (playerSum > 21 && pcSum <= 21){
+
+         alert(`Computer won!\ncards: ${pcCards} total: ${pcSum}\n yours card: ${playerCards},   total: ${playerSum}`)
+         console.log('Computer won!')
+
+      }else{
+
+         alert(`You won:\nyours card: ${playerCards},  total: ${playerSum}\n Computer cards ${pcCards}, total: ${pcSum}`)
+         console.log('You won!')
+         
+      }
+      
    }else{
 
       alert(`its a tie.\nyours card: ${playerCards}, total: ${playerSum}\n Computer cards ${pcCards}, total: ${pcSum}`)
