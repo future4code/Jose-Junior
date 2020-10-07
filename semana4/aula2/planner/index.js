@@ -1,15 +1,17 @@
 function selectDay() {
     
     const option = document.querySelector('#dias-semana')
+    const optionHour = document.querySelector('#horas-dia')
+    const valueHour = optionHour.value
     const value = option.value
-    makeTask(value)
+    makeTask(value, valueHour)
    
 
 }
 
 let i = 0
 
-function makeTask(value){
+function makeTask(value, valueHour){
 
 
     const daySelected = document.querySelector(`#${value}`)
@@ -53,10 +55,10 @@ function createUnorderedList(classe){
 function taskDone(id){
     const li = document.querySelector('#'+id)
     
-    if(li.style.textDecoration === 'none'){
-        li.style.textDecoration = 'line-through'
-    }else{
+    if(li.style.textDecoration === 'line-through'){
         li.style.textDecoration = 'none'
+    }else{
+        li.style.textDecoration = 'line-through'
     }
     
 

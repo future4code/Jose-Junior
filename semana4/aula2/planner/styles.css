@@ -12,18 +12,37 @@ header {
 }
 
 section {
+
     display: flex;
     justify-content: space-evenly;
     height: 90vh;
+    
 }
 
 .semana {
     border: 1px dotted rgb(53, 53, 53);
     width: 14%;
     padding: 5px;
+    height: max-content;
 }
 
 li{
  
   cursor:pointer;
+
+}
+.semana{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.horas{
+
+    border: 1px dotted rgb(53, 53, 53);
+    width: 100%;
+    padding: 5px;
+    height: 50px;
+
 }
