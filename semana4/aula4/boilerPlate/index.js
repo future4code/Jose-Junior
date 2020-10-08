@@ -39,8 +39,8 @@ function imprimirExtrato(){
     })*/
 
     //desafio
-    gastoTotal = arrDespesas.reduce((previwes, currentValue )=>{
-        return previwes + currentValue.valor
+    gastoTotal = arrDespesas.reduce((previews, currentValue )=>{
+        return previews + currentValue.valor
     }, gastoTotal)
     const alimentacao = arrDespesas.filter((despesa)=>{
         return despesa.tipo === 'alimentação'
