@@ -223,4 +223,4 @@ maiorESegundoMenor(arrayList)
 const funcaoNaoNomeada = () =>{
     alert("Hello Future4");
 }
-funcaoNaoNomeada()
+funcaoNaoNomeada();
