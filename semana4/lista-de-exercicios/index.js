@@ -224,3 +224,62 @@ const funcaoNaoNomeada = () =>{
     alert("Hello Future4");
 }
 funcaoNaoNomeada();
+
+//Exercícios de Objetos
+
+//Explique com as suas palavras o que são e quando podemos/devemos utilizar arrays e objetos.
+//R: 'um objeto dentro do javascript eh uma variavel que pode conter 1 ou mais propriedades e cada proriedade tera uma chave e um valor
+//e podemos utilizar quando queremos que nossa variavel seja mais especifica e contenha propriedades como no real world'
+
+
+// Crie uma função chamada criaRetangulo que recebe como 
+//parâmetros dois lados (lado1 e lado2) e retorna um objeto
+// com 4 informações: largura (lado1), altura (lado2), 
+//perímetro (2 * (lado1 + lado2)) e área (lado1 * lado2).
+
+function criaRetangulo(lado1, lado2){
+    const retangulo = {
+        'largura': lado1,
+        'altura': lado2,
+        'perimetro': 2 * (lado1 + lado2),
+        'area': (lado1 * lado2)
+    }
+    return retangulo
+}
+
+// Crie um objeto para representar seu filme favorito. 
+//Ele deve ter as seguintes propriedades: título, ano, diretor 
+//e atores/atrizes (lista com pelo menos 2 atores/atrizes). 
+//Imprima na tela a seguinte string, baseada nos valores do objeto:
+// Venha assistir ao filme NOME DO FILME, de ANO, dirigido por DIRETOR e 
+//estrelado por ATOR 1, ATRIZ 2, ATOR n. A lista de atores/atrizes deve ser 
+//impressa inteira, independente do tamanho da lista.
+
+function filmeFavorito(){
+    const filme = {
+        'titulo':'Back to the Future',
+        'ano': 1985,
+        'diretor': 'Robert Zemeckis',
+        'atores': ['Michael J. Fox', ' Christopher Lloyd']
+    }
+    console.log(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}`)
+}
+
+// 4.
+// Crie um objeto que represente uma pessoa qualquer, com as propriedades de nome, idade, email e endereco. Crie uma função chamada anonimizarPessoa, que deverá retornar um novo objeto com as mesmas propriedades, mas com a string ANÔNIMO no lugar do nome. O objeto original deve ser mantido com o nome da pessoa.
+const Junior = {
+    'nome': 'Junior',
+    'idade': 29,
+    'email': 'foo@gmail.com',
+    'endereco': 'av. bar numero 0'
+}
+
+const anonimizarPessoa = (objeto)=>{
+    const anonimo = {
+        ...objeto,
+        'nome': 'ANONIMO'
+    }
+    return anonimo
+}
+
+console.log(anonimizarPessoa(Junior))
