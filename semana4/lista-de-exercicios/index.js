@@ -223,7 +223,7 @@ maiorESegundoMenor(arrayList)
 const funcaoNaoNomeada = () =>{
     alert("Hello Future4");
 }
-funcaoNaoNomeada();
+//funcaoNaoNomeada();
 
 //Exercícios de Objetos
 
@@ -282,4 +282,142 @@ const anonimizarPessoa = (objeto)=>{
     return anonimo
 }
 
-console.log(anonimizarPessoa(Junior))
+//EXERCICIOS DE FUNCOES DE ARRAYS
+
+const pessoas1 = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+//a) Faça uma função que retorne um novo array 
+//só com os adultos (pessoas com idade igual ou superior a 20)
+
+function maioresQue20 (array){
+    const newArray = array.filter((pessoa)=>{
+        return pessoa.idade >=20
+    })
+    return newArray
+}
+
+//Faça uma função que retorne um novo array
+//só com as crianças/adolescentes (pessoas com idade inferior a 20)
+
+function menoresQue20 (array){
+    const newArray = array.filter((pessoa)=>{
+        return pessoa.idade < 20
+    })
+    return newArray
+}
+
+const arrayNumeros = [1, 2, 3, 4, 5, 6]
+
+//a) Escreva uma função que retorne um array com as entradas multiplicadas por 2. Isto é [2, 4, 6, 8, 10, 12].
+
+function multiplyBy2(array){
+    const newArray = array.map((numero)=>{
+        return numero * 2
+    })
+    return newArray
+}
+console.log(multiplyBy2(arrayNumeros))
+
+//b) Escreva uma função que **retorne** um array com as entradas multiplicadas por 3 e como strings. Isto é: `["3", "6", "9", "15", "18"]`
+
+function multiplyBy3(array){
+    const newArray = array.map((numero)=>{
+        return (numero * 3).toString()
+    })
+    return newArray
+}
+console.log(multiplyBy3(arrayNumeros))
+
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+//a) Escreva uma função que receba este array e devolva outro array somente com as pessoas que tem permissão de entrar no brinquedo
+
+function pessoasPermitidas(array){
+    const permitidas = array.filter((pessoas)=>{
+        return pessoas.idade > 14 && pessoas.idade < 60 && pessoas.altura >= 1.5
+    })
+    return permitidas
+}
+
+//b) Escreva uma função que receba este array e devolva outro array somente com as pessoas que não podem entrar no brinquedo.
+
+function pessoasNaoPermitidas(array){
+    const naoPermitidas = array.filter((pessoas)=>{
+        return pessoas.altura < 1.5
+    })
+    return naoPermitidas
+
+}
+
+// 4. Você foi contratado por um escritório médico para gerar e-mails automáticos para seus clientes, lembrando-os de sua consulta marcada; ou avisa-los que foi cancelada. Considere, então, essas consultas:
+
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+function emails(array){
+    array.forEach((element) => {
+        if(!element.cancelada){
+            if(element.genero === 'masculino'){
+                console.log(`Olá, Sr. ${ element.nome}. Estamos enviando esta mensagem para
+                lembrá-lo da sua consulta no dia ${ element.dataDaConsulta}. Por favor, acuse
+                o recebimento deste e-mail.`)
+            }else{
+                console.log(`Olá, Sra. ${ element.nome}. Estamos enviando esta mensagem para
+                lembrá-la da sua consulta no dia ${ element.dataDaConsulta}. Por favor, acuse
+                o recebimento deste e-mail.`) 
+            }
+        }else{
+            if(element.genero === 'masculino'){
+                console.log(`Olá, Sr. ${ element.nome }. Infelizmente, sua consulta marcada
+                para o dia ${ element.dataDaConsulta } foi cancelada. Se quiser, pode entrar em 
+                contato conosco para remarcá-la`)
+            }else{
+                console.log(`Olá, Sra. ${ element.nome }. Infelizmente, sua consulta marcada
+                para o dia ${ element.dataDaConsulta } foi cancelada. Se quiser, pode entrar em 
+                contato conosco para remarcá-la`)
+            }
+        }
+    });
+}
+
+//console.log(emails(consultas))
+
+//5. Agora, pediram para você ajudar a fazer uma funcionalidade de um banco digital. Antes de explicar a sua tarefa, você precisa entender como eles guardam as contas dos clientes. Basicamente, eles salvam o nome do clientes, o saldo total e uma lista contendo todas as compras realizadas pelo cliente. Veja abaixo:
+const contas = [
+	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+]
+
+function atualizarSaldo(array){
+    array.forEach((cliente)=>{
+        const gastos = cliente.compras
+        let valorAnterior = 0
+        const gastoTotal = gastos.reduce((previews, currently)=>{
+            return previews + currently
+        }, valorAnterior)
+
+        cliente.saldoTotal -= gastoTotal
+    })
+    console.log(array)
+}
+
+// atualizarSaldo(contas)
