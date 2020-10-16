@@ -1,0 +1,28 @@
+button img{
+    height: 24px;
+    width: 24px;
+}
+
+.share-conteiner button{
+
+    border: none;
+    background-color: transparent;
+
+}
+button :first-child{
+    height: 30px;
+    width: 30px;
+}
+
+.share-conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mensagen{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
