@@ -37,7 +37,7 @@ const DivImageInfo = styled.div`
         100% {opacity: 100%; right: 600px;};
     }
     animation: ${props=> props.animationName};
-    animation-duration: 1s;
+    animation-duration: 1s ;
    
 `
 const Iconimg = styled.img`

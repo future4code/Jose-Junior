@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Home from './Screens/Home';
 
 function App() {
+  
   return (
     <div className="App">
       <Home/>

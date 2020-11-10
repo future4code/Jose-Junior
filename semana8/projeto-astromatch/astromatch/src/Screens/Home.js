@@ -21,7 +21,7 @@ const MyTabs = styled(Tabs)`
     max-width: 100%;
 `
 
-const MainDiv = styled.div`
+export const MainDiv = styled.div`
 
     position: relative;
     width: 35vw;
