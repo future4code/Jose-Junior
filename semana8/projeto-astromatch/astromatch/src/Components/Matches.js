@@ -4,7 +4,7 @@ import axios from 'axios'
 import {MainDiv, SingleMatch, Img, Name, DivButton, CustomButton }from './StyleFindMatch'
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import {HeartDiv} from '../Screens/Home'
+import {HeartDiv} from '../Screens/StyleHome'
 
 const MainDivMatches = styled(MainDiv)`
     flex-direction: column;
