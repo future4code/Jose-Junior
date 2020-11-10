@@ -93,7 +93,7 @@ export const SingleMatch = styled.div`
 export const Img = styled.img`
     height: 60px;
     width: 60px;
-    border-radius: 3px;
+    border-radius: 50%;
 `
 export const Name = styled.h2`
     margin-left: 10px;
