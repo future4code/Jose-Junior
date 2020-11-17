@@ -1,0 +1,8 @@
+{
+    "eslint.validate": [
+        
+    {}
+    ],
+    "eslint.nodePath": "",
+    "eslint.nodeEnv": ""
+}
