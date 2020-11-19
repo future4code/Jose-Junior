@@ -10,7 +10,7 @@ export const MainDiv = styled.div`
     display: flex;
     flex-direction: column;
     @media screen and (max-width:800px){
-        width: 90vw;
+        width: 100vw;
     }
 `
 
@@ -23,6 +23,7 @@ export const VideoDiv = styled.div`
     overflow: hidden;
     box-shadow: 0px 20px 20px rgba(0,0,0,0.2);
     position: relative;
+    border-bottom: 2px solid white;
    
     
 
@@ -60,6 +61,7 @@ export const TripsDiv = styled.div`
      width: 100%;
      min-height: 50vh;
   max-height: max-content;
+  background-color: #11111d;
 `
 
 export const LogoDiv = styled.div`

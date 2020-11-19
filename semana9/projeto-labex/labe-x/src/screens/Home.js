@@ -1,4 +1,4 @@
-import React ,{useEffect} from 'react';
+import React ,{useEffect, useState} from 'react';
 import { useHistory} from 'react-router-dom'
 import NavBar from '../components/NavMenu'
 import videoFrame from '../img/VideoFrame.mp4'
@@ -18,7 +18,6 @@ export default function HomePage (props){
 
     
     const history = useHistory()
-  
     const logout = ()=>{
         localStorage.removeItem('token')
         console.log('logout')
@@ -41,9 +40,9 @@ export default function HomePage (props){
   
     return <MainDiv>
             <NavBar
-            createButton={false}
+            seeCreateButton={localStorage.getItem('token')? true: false}
+            onCreateTrips={()=>history.push('/create')}
             seeTripsButton={false}
-            // onSeeTrips
             onLogin={localStorage.getItem('token')?logout:()=> history.push('/login')}
             loginButton={localStorage.getItem('token')? 'Log-out':'Admin Access'}
             ></NavBar>

@@ -4,6 +4,7 @@ import HomePage from '../screens/Home'
 import ApplyPage from '../screens/ApplyPage';
 import LoginPage from '../screens/LoginPage'
 import TripInfoPage from '../screens/TripInfoPage'
+import CreatePage from '../screens/CreatePage'
 
 
 
@@ -15,6 +16,7 @@ export default function Routes(){
           <Route exact path="/apply_form/:id" component={ApplyPage} />
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/trip_info/:id" component={TripInfoPage} />
+          <Route exact path="/create" component={CreatePage} />
         </Switch>
       </BrowserRouter>
     );

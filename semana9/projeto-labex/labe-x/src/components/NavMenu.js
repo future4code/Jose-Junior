@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components'
 import useInputCtrl from '../hooks/InputCtrl'
 import logo from '../img/rocketLogo.png'
+import { useHistory} from 'react-router-dom'
 
 
 
@@ -11,7 +12,7 @@ const NavBar = styled.nav`
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    width: 95%;
+    width: 98%;
     height: 60px;
     position: absolute;
     top: 0px;
@@ -85,14 +86,16 @@ const ButtonLink  = styled.button`
 export default function NavMenu (props){
 
     const [value, handleValue] = useInputCtrl()
+    const history = useHistory()
 
     return <NavBar>
-        <Logo src={logo} alt=""/>
+        <Logo onClick={()=>history.push('/')} src={logo} alt=""/>
         <div>
             <SearchInput placeholder='Search' value={value} onChange={handleValue} type='text'/>
         </div>
         <div>
             {props.seeTripsButton && <ButtonLink onClick={props.onSeeTrips} variant='text' color='default'>See Trips</ButtonLink> }
+            {props.seeCreateButton && <ButtonLink onClick={props.onCreateTrips} variant='text' color='default'>Create Trip</ButtonLink> }
             <ButtonNav onClick={props.onLogin} variant='contained' color='default'>{props.loginButton}</ButtonNav>
         </div>
     </NavBar>

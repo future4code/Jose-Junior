@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, useParams} from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import launch from '../img/launch.mp4'
 import { ThemeProvider } from '@material-ui/styles';
 import {ButtonPrimary, ButtonSecondary, DivButton} from '../components/CardTrip'
@@ -7,13 +7,16 @@ import {theme, MyInput, DivForm, DivInput} from './ApplyStyles'
 import {useForm} from '../hooks/FormCtrl'
 import axios from 'axios'
 import BaseLayout from '../components/BaseLayout'
+import useAuthorization from '../hooks/Authorization';
 
 
 
-export default function ApplyPage (props){
+export default function CreatePage (props){
 
+    
+    useAuthorization()
 
-    const initForm = {name: '', age: 0, country: '', profession:'', applicationText: ''}
+    const initForm = {name: '', durationInDays: 0, description: '', planet:'', date: ''}
 
     const [form, onChange] = useForm(initForm)
 
@@ -24,16 +27,18 @@ export default function ApplyPage (props){
         onChange(name, value)
     }
 
-    const pathParams = useParams()
+    
     const history = useHistory()
-    const id = pathParams.id
+    
 
     const applying = (event)=>{
         const body = form
-        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/jose/trips/${id}/apply`
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/jose/trips`
         
-        axios.post(url, body).then(response=>{
-            alert(response.data.message)
+        axios.post(url, body, {headers:{
+            auth: localStorage.getItem('token')
+        }}).then(response=>{
+            alert('Trip Created!')
 
             history.push('/')
         }).catch(error=>{
@@ -57,12 +62,10 @@ export default function ApplyPage (props){
     return <BaseLayout
                 isHomePage={true}
                 seeTripsButton={()=> history.push('/')}
-                seeCreateButton={localStorage.getItem('token')? true: false}
-                onCreateTrips={()=>history.push('/create')}
                 onLoginClick={localStorage.getItem('token')?logout:()=> history.push('/login')}
                 loginText={localStorage.getItem('token')? 'Log-out':'Admin Access'}
-                whiteLogo='Ready to'
-                greyLogo=' launch'
+                whiteLogo='Create'
+                greyLogo=' New Trip'
                 video={launch}
             >
             <ThemeProvider theme={theme}>
@@ -75,21 +78,21 @@ export default function ApplyPage (props){
                     
                     <DivInput width='100%'>
                         <DivInput width='20%'>
-                            <MyInput name='age' value={form.age} onChange={handleInput}
-                                width= '98%' type='number' min='18' label="Age" variant="filled" required/>
+                            <MyInput name='planet' value={form.planet} onChange={handleInput}
+                                width= '98%' type='text'  label="Planet" variant="filled" required/>
                         </DivInput>
                         <DivInput width='35%'>   
-                            <MyInput  name='country' value={form.country} onChange={handleInput}
-                                width='98%' label="Country" variant="filled" required/>
+                            <MyInput  name='date' value={form.date} onChange={handleInput}
+                                width='98%' label="Date" type='date' variant="filled" required/>
                         </DivInput>
                         <DivInput width='35%'>
-                            <MyInput name='profession' value={form.profession} onChange={handleInput} 
-                                width='98%' label="Profession" variant="filled" required />
+                            <MyInput name='durationInDays' value={form.durationInDays} onChange={handleInput} 
+                                width='98%' label="Duration Days" type='number' variant="filled" required />
                         </DivInput>                       
                     </DivInput>
                     <DivInput width='100%'>
-                        <MyInput name='applicationText' value={form.applicationText} onChange={handleInput}
-                            width='90%' label="Why Choose you:" variant="filled" required/>
+                        <MyInput name='description' value={form.description} onChange={handleInput}
+                            width='90%' label="Description" variant="filled" required/>
                     </DivInput>
                     <DivButton>
                         <ButtonSecondary type='button' onClick={()=> history.goBack()}>Back</ButtonSecondary>
