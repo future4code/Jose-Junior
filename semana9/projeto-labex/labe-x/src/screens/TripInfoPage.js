@@ -44,7 +44,7 @@ export default function TripInfo (props){
     useAuthorization()
 
     const data = useRequestProtectedData(url, localStorage.getItem('token'), undefined)
-    console.log(data)
+   
 
     const approveCand = (candidateId, tripId)=>{
         const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/jose/trips/${tripId}/candidates/${candidateId}/decide`
@@ -58,7 +58,6 @@ export default function TripInfo (props){
     }
     const logout = ()=>{
         localStorage.removeItem('token')
-        console.log('logout')
         history.push('/')
 
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from '../components/NavMenu'
-import {MainDiv, VideoFrame, ImageFrame,LogoName} from '../screens/HomeStyle'
+import {MainDiv, VideoFrameLocal, ImageFrame,LogoName} from '../screens/HomeStyle'
 import { VideoDivLocal, LogoDivLocal} from '../screens/ApplyStyles'
 
 
@@ -27,9 +27,9 @@ export default function BaseLayout(props){
                         <LogoName color='grey'> {props.greyLogo}</LogoName>
                 </LogoDivLocal>
                 {props.image && <ImageFrame src={props.image}/>}
-                <VideoFrame loop autoPlay muted>
+                <VideoFrameLocal loop autoPlay muted>
                     <source src={props.video}/> 
-                </VideoFrame>
+                </VideoFrameLocal>
                 
             </VideoDivLocal>  
            {props.children}

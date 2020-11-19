@@ -20,9 +20,8 @@ const NavBar = styled.nav`
     z-index: 4;
     background-color: rgba(0,0,0, 0.4);
     @media screen and (max-width:800px){
-        height: 120px;
+        height: 100px;
         flex-flow: row wrap;
-        justify-content: flex-end;
         padding: 10px;
 
     }
@@ -85,13 +84,13 @@ const ButtonLink  = styled.button`
 
 export default function NavMenu (props){
 
-    const [value, handleValue] = useInputCtrl()
+    
     const history = useHistory()
 
     return <NavBar>
         <Logo onClick={()=>history.push('/')} src={logo} alt=""/>
         <div>
-            <SearchInput placeholder='Search' value={value} onChange={handleValue} type='text'/>
+           
         </div>
         <div>
             {props.seeTripsButton && <ButtonLink onClick={props.onSeeTrips} variant='text' color='default'>See Trips</ButtonLink> }

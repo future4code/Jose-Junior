@@ -37,9 +37,23 @@ export const VideoFrame = styled.video`
     object-fit: cover;
     @media screen and (max-width:800px){
        
-        width: 120vw;
+        width: 100vw;
+        height: 40vh;
     }
 `
+export const VideoFrameLocal = styled.video`
+
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    object-fit: cover;
+    @media screen and (max-width:800px){
+       
+        width: 100vw;
+       
+    }
+`
+
 export const ImageFrame = styled.img`
 
     height: 100vh;

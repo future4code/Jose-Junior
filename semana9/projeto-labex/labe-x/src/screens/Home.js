@@ -5,6 +5,7 @@ import videoFrame from '../img/VideoFrame.mp4'
 import CardTrip from '../components/CardTrip'
 import useRequestData from '../hooks/RequestData'
 import {MainDiv, VideoDiv, VideoFrame,TripsDiv,LogoDiv, LogoName} from './HomeStyle'
+import useInputCtrl from '../hooks/InputCtrl'
 
 
 
@@ -16,11 +17,14 @@ import {MainDiv, VideoDiv, VideoFrame,TripsDiv,LogoDiv, LogoName} from './HomeSt
 
 export default function HomePage (props){
 
+    const [value, handleValue] = useInputCtrl()
+   
+
     
     const history = useHistory()
     const logout = ()=>{
         localStorage.removeItem('token')
-        console.log('logout')
+        
         history.push('/')
 
     }
@@ -37,9 +41,13 @@ export default function HomePage (props){
          undefined)
 
     
+
+    
   
     return <MainDiv>
             <NavBar
+            value={value}
+            handleValue={handleValue}
             seeCreateButton={localStorage.getItem('token')? true: false}
             onCreateTrips={()=>history.push('/create')}
             seeTripsButton={false}

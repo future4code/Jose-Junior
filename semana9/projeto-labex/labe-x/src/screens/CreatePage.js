@@ -52,7 +52,7 @@ export default function CreatePage (props){
 
     const logout = ()=>{
         localStorage.removeItem('token')
-        console.log('logout')
+       
         history.push('/')
 
     }

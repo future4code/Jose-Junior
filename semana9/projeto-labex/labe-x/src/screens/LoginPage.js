@@ -23,7 +23,7 @@ export default function LoginPage (props){
     const history = useHistory()
     
 
-    const logging = ()=>{
+    const logging = (event)=>{
         const body = {
             password: password,
             email: email,
@@ -37,6 +37,8 @@ export default function LoginPage (props){
         }).catch(error=>{
             console.log(error)
         })
+
+        event.preventDefault()
     }
 
 
@@ -52,19 +54,21 @@ export default function LoginPage (props){
             >
             <ThemeProvider theme={theme}>
                 <DivForm>
+                    <form onSubmit={logging}>
                     <DivInput width='100%'> 
                         <MyInput value={email} onChange={changeEmail}
-                            width='90%' color='text.primary'label='E-mail' variant="filled" />
+                            width='90%' color='text.primary'label='E-mail' type='email' variant="filled" required/>
                     </DivInput>
                     
                     <DivInput width='100%'>
                         <MyInput type='password'value={password} onChange={changePassowrd}
-                            width='90%' label="Password" variant="filled" />
+                            width='90%' label="Password" variant="filled" required/>
                     </DivInput>
                     <DivButton>
-                        <ButtonSecondary onClick={()=> history.goBack()}>Back</ButtonSecondary>
-                        <ButtonPrimary onClick={logging}>Login</ButtonPrimary>
+                        <ButtonSecondary type='button'onClick={()=> history.goBack()}>Back</ButtonSecondary>
+                        <ButtonPrimary >Login</ButtonPrimary>
                     </DivButton>
+                  </form>
                 </DivForm>
             </ThemeProvider>   
             </BaseLayout>     
