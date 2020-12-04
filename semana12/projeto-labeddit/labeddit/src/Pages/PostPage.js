@@ -1,12 +1,13 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom'
-import { ContextGlobal } from '../Global/Context/context';
 import PostCard from '../Components/PostCard'
 import {Login_RegisterContainer} from './stylesPage'
 import axios from 'axios'
 import { endPoints } from '../Constants/constants';
+import useAuthorization from '../Hooks/useAuthorization';
 
 export default function PostPage() {
+  useAuthorization()
   const pathParams = useParams()
   const [post, setPost] = useState('')
   
@@ -18,7 +19,7 @@ export default function PostPage() {
       setPost(response.data.post)
      
     })
-  }, [])
+  }, [pathParams.idPost])
 
   return (
    <Login_RegisterContainer>
@@ -36,8 +37,8 @@ export default function PostPage() {
           username={'Comment by '+ '@'+comment.username}
       
           text={comment.text}
-          votesCount={post.votesCount}
-          id={post.id}
+          votesCount={comment.votesCount}
+          id={comment.id}
           url={`${endPoints.base_url}/${pathParams.idPost}/comment/${comment.id}/vote`}
           display={false}
         /> 

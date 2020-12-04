@@ -25,8 +25,11 @@ export default function CommentCard(props) {
         const body = {'text': form.text}
     axios.post(`${endPoints.base_url}/${props.id}/comment`, body, {headers:{
       Authorization: localStorage.getItem('token')
+
     }}).then(response=>{
-        console.log(response.data)
+        alert('comentario enviado')
+        onChange('text', '')
+        
     })
     }
     
@@ -37,7 +40,7 @@ export default function CommentCard(props) {
         </ButtonContainer>
         
         <ButtonContainer display={display}>
-            <CommentInput name='text'  onChange={handleChange} placeholder='what are you thinking...'/>
+            <CommentInput className='comment' name='text' value={form.text} onChange={handleChange} placeholder='what are you thinking...'/>
             <CommentButton onClick={sendComment}>
                <SendRoundedIcon/>
             </CommentButton>

@@ -12,7 +12,7 @@ export default function FeedPage() {
   const [post, setPosts]= useState([])
 
   useEffect(() => {
-    const orderedData = data.sort((a, b )=> b.votesCount - a.votesCount)
+    const orderedData = data
     setPosts(orderedData)
   }, [data])
 

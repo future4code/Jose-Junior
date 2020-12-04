@@ -27,7 +27,10 @@ export default function TopBar(props) {
         <SearchInput placeholder='Search' name='search' onChange={handleChange} type="text"/>
         </DivContainer>
       <DivContainer>
+
   {states.token? <Button>user: {states.user&&states.user.username}</Button>:<Button onClick={()=>history.push('/login')}>Login</Button>}
+  {states.token && <Button onClick={()=>history.push('/create_post')}>New Post</Button>}
+
       {!states.token && <Button onClick={()=>history.push('/register')}>Register</Button>}
       {states.token && <Button onClick={()=>{
         setStates.token('') 
