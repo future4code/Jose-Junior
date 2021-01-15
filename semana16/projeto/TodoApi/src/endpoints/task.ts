@@ -1,5 +1,5 @@
 import express, { Router, Request, Response } from "express";
-import {user, task} from '../types/index'
+import {user, task, STATUS} from '../types/index'
 import {connection} from '../index'
 
 
@@ -15,8 +15,14 @@ router.get('/table', async (req: Request, res: Response)=>{
           task.string('description').notNullable()
           task.string('status').defaultTo('to_do')
           task.date('limitDate').notNullable()
-          task.integer('creatorId').notNullable()
-          task.string('creatorNickname').notNullable()
+          task.integer('creatorId').unsigned()
+          task.foreign('creatorId')
+          .references('Users.id')
+          .onDelete('CASCADE')
+          .onUpdate('CASCADE')
+          task.string('creatorNickname')
+         
+
        })
        res.status(200).send('table created!')
     } catch (err) {
@@ -65,8 +71,9 @@ router.get('/table', async (req: Request, res: Response)=>{
         }
         const result: task[] = await connection
         .select('*')
-        .from('Tasks')
-        .where({id: creatorId})
+        .from('Tasks').join('Users', (table)=>{
+           table.on('Users.id', '=', "Tasks.creatorId")
+        }).where({creatorid: creatorId})
         
         if(!result.length){
             throw new Error('None tasks found or id creator is not recognized')
@@ -137,5 +144,29 @@ router.get('/table', async (req: Request, res: Response)=>{
        res.status(errorResponse).send(error.sqlmessage || error.message)
     }
  })
+
+ router.put('/status/edit/:id', async (req: Request, res: Response)=>{
+   let errorResponse: number = 400
+    try {
+       const id: string = req.params.id as string
+       const status = req.body.status
+       if(Number(id) === NaN){
+          throw new Error('Please send a number as Id') 
+      }
+      if(!status){
+         throw new Error('Please send a correct status \n ex: doing, done or to_do ') 
+      }
+      
+         await connection('Tasks')
+           .where({id: id})
+           .update({status: status.toLowerCase()})
+   
+      res.status(200).send('status updated')
+      
+    } catch (error) {
+       res.status(errorResponse).send(error.sqlmessage || error.message)
+    }
+ })
  
+
  export default router

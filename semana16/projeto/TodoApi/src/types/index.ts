@@ -13,3 +13,9 @@ export type task = {
     creatorUserId: number,
     creatorNickname: string
 }
+
+export enum STATUS {
+    TODO = 'to_do',
+    DOING = 'doing',
+    DONE = 'done'
+}
