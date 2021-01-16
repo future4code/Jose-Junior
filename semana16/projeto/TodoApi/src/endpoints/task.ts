@@ -51,9 +51,8 @@ router.get('/table', async (req: Request, res: Response)=>{
 
       const [day, month, year] = limit_date.split('/')
       const limitDate: string = `${year}-${month}-${day}` 
-      const creatorNickname = result[0].nickname
       await connection
-      .insert({title, description, limitDate, creatorId, creatorNickname })
+      .insert({title, description, limitDate, creatorId})
       .into('Tasks')
 
       res.status(200).send('Task added')
@@ -92,6 +91,39 @@ router.get('/table', async (req: Request, res: Response)=>{
         
     } catch (error) {
         res.status(400).send(error.sqlmessage || error.message)
+    }
+ })
+
+ router.get('/status', async (req: Request, res: Response)=>{
+   let errorResponse: number = 400
+    try {
+       const status: string = req.query.status as string
+     
+      if(!status){
+         throw new Error('Please send a correct status \n ex: doing, done or to_do ') 
+      }
+      
+      
+         const results : task[] = await connection('Tasks')
+           .where({status: status.toLowerCase()})
+
+           if(!results.length){
+            throw new Error(`no tasks with this status ${status}`) 
+         }
+
+         results.forEach(task=>{
+            task.limitDate = new Date(task.limitDate)
+            .toLocaleDateString("sq-AL",{ 
+                year: 'numeric', 
+                day: '2-digit', 
+                month: '2-digit' 
+              })
+         })
+   
+      res.status(200).send(results)
+      
+    } catch (error) {
+       res.status(errorResponse).send(error.sqlmessage || error.message)
     }
  })
 
@@ -144,6 +176,10 @@ router.get('/table', async (req: Request, res: Response)=>{
        res.status(errorResponse).send(error.sqlmessage || error.message)
     }
  })
+
+
+
+
 
  router.put('/status/edit/:id', async (req: Request, res: Response)=>{
    let errorResponse: number = 400
