@@ -1,0 +1,5 @@
+//http://localhost:3003/user
+
+http://localhost:3003/user/pagination?page=3&by=type
+
+

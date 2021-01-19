@@ -1,0 +1,16 @@
+{
+  "name": "aula_node",
+  "version": "1.0.0",
+  "description": "exercicios da aula",
+  "main": "index.js",
+  "scripts": {
+    "todo": "node ./Todolist/index.js",
+    "math": "node ./Math/index.js",
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Jose Junior",
+  "license": "ISC"
+}
